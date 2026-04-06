@@ -6,7 +6,7 @@ const Navbar = () => {
       <h1 className="tw-text-xl tw-font-bold">Dashboard</h1>
 
       {/* Center: Search */}
-      <div className="tw-relative tw-w-1/3">
+      <div className="tw-relative tw-w-1/3 tw-hidden md:tw-block ">
         <input
           type="text"
           placeholder="Search..."
@@ -29,7 +29,7 @@ const Navbar = () => {
         {/* Profile */}
         <div className="tw-flex tw-items-center tw-gap-2 tw-cursor-pointer">
           <div className="tw-w-8 tw-h-8 tw-bg-gray-300 tw-rounded-full"></div>
-          <span className="tw-text-sm">Hammad</span>
+          <span className="tw-text-sm tw-hidden md:tw-block">Hammad</span>
         </div>
 
       </div>

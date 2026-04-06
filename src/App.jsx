@@ -8,7 +8,7 @@ import Users from "./pages/Users";
 import Orders from "./pages/Orders";
 import Settings from "./pages/Settings";
 function App() {
-  
+
   const isLoggedIn = localStorage.getItem("isAuth") === "true";
   const [isAuth, setIsAuth] = useState(isLoggedIn);
 
@@ -18,7 +18,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <div className="tw-flex">
+      <div className="tw-flex tw-flex-col md:tw-flex-row">
         <Sidebar />
 
         <div className="tw-flex-1">
