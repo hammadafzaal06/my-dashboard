@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { login } from "../utils/auth";
 
 const Login = ({ setIsAuth }) => {
   const [email, setEmail] = useState("");
@@ -7,9 +8,22 @@ const Login = ({ setIsAuth }) => {
   const handleLogin = (e) => {
     e.preventDefault();
 
-    // simple validation
-    if (email === "admin@gmail.com" && password === "1234") {
-      localStorage.setItem("isAuth", "true");
+    // 👇 check if user already exists
+    let user = JSON.parse(localStorage.getItem("user"));
+
+    // 👇 first time default user create
+    if (!user) {
+      user = {
+        name: "Hammad",
+        email: "admin@gmail.com",
+        password: "1234",
+      };
+      localStorage.setItem("user", JSON.stringify(user));
+    }
+
+    // ✅ now validate with updated user
+    if (email === user.email && password === user.password) {
+      login();
       setIsAuth(true);
     } else {
       alert("Invalid credentials");
@@ -43,6 +57,10 @@ const Login = ({ setIsAuth }) => {
         <button className="tw-bg-red-500 tw-text-white tw-w-full tw-p-2 tw-rounded-lg">
           Login
         </button>
+
+        <p className="tw-text-xs tw-text-gray-500 tw-mt-3">
+          Demo: admin@gmail.com / 1234
+        </p>
       </form>
     </div>
   );
