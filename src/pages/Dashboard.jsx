@@ -10,7 +10,7 @@ const Dashboard = () => {
     ];
 
     const activities = [
-        { id: 1, user: "Kainat Ikram", action: "Purchased Premium Plan", time: "2 mins ago" },
+        { id: 1, user: "Afza Battol", action: "Purchased Premium Plan", time: "2 mins ago" },
         { id: 2, user: "Huzaifa Ali", action: "Updated profile picture", time: "1 hour ago" },
         { id: 3, user: "Admin", action: "System Backup Completed", time: "5 hours ago" },
     ];
